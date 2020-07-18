@@ -44,7 +44,7 @@ pub fn file_open() {
             println!("couldn't read {}: {}", display, why);
             return;
         }
-        Ok(value) => print!("path={},read len ={},contains:\n{}", display, value, s),
+        Ok(value) => print!("path={},read len ={},contains:\n{}\n", display, value, s),
     }
 }
 
@@ -80,6 +80,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             println!("couldn't read {}: {}", display, why);
             return;
         }
-        Ok(value) => print!("path={},read len ={:?},contains:\n{}", display, value, text),
+        Ok(_) => print!("path={}\n", display),
     }
 }
