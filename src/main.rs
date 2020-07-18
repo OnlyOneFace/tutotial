@@ -119,4 +119,6 @@ fn main() {
     myio::std_out();
 
     myio::file_open();
+
+    myio::file_write();
 }
