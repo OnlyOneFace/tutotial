@@ -27,7 +27,9 @@ fn main() {
     let this_enum = myenum::Message::MouseMove { x: 3, y: 6 };
     match this_enum {
         myenum::Message::MouseMove { x, y } => println! {"{},{}",x,y},
-        _ => println! {"none"},
+        myenum::Message::Quit => println! {"quit"},
+        myenum::Message::ChangeColor(x, y, z) => println! {"{},{},{}",x,y,z},
+        myenum::Message::Write(s) => println! {"{}",s},
     }
 
     let opt = Option::Some("Hello");
