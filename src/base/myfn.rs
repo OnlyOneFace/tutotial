@@ -28,3 +28,7 @@ where
 pub fn factory(x: i32) -> Box<dyn Fn(i32) -> i32> {
     Box::new(move |y| x + y)
 }
+
+//别名
+#[allow(dead_code)]
+type myfn_instance = fn(u32) -> u32;

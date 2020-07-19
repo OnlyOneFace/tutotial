@@ -121,4 +121,43 @@ fn main() {
     myio::file_open();
 
     myio::file_write();
+
+    let s = format!(
+        "{1}是个有着{0:>0width$}KG重，{height:?}cm高的大胖子\n",
+        81,
+        "wayslog",
+        width = 4,
+        height = 178
+    );
+    print!("{}", s);
+
+    let s1 = format!(
+        "rust.cc社区的唐{CaiNiao}眼睛度数足有{0:>06.1}度却还是每天辛苦码代码才能赚到100个{3}。\n但是{2}却只需睡{1:^4$}个小时就可以迎娶白富美了。\n",
+        500.0,
+        12,
+        "ELTON",
+        "QB",
+        4,
+        CaiNiao = "Mike"
+    );
+    print!("{}", s1);
+
+    let mut x = 5;
+    match x {
+        ref mut mr => println!("mut ref :{}", mr),
+    }
+    // 当然了……在let表达式里也能用
+    println! {"{}",x};
+
+    let x1 = 4;
+    let y1 = false;
+    match x1 {
+        4 | 5 if y1 => println!("yes"),
+        _ => println!("no"),
+    }
+    println!("{}", y1);
+
+    let p1 = mytrait::Point { x: 6u8, y: 8u8 };
+    let p2 = mytrait::Point { x: 3u8, y: 9u8 };
+    println! {"{:?}",p1+p2};
 }
